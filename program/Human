@@ -1,0 +1,27 @@
+/**
+ * 人間の共通ステータスと振る舞いを定義する抽象クラス
+ */
+public abstract class Human {
+    String name;
+    int lv, hp, maxHp, atk, matk, spd;
+
+    public Human(String name) {
+        this.name = name;
+        this.lv = 1;
+        // maxHp, hp, atk などの初期値は子クラスのコンストラクタで設定する
+    }
+
+    // 攻撃系のメソッド（戻り値のStringはログに表示するメッセージ）
+    public abstract String attack(Enemy target);
+    public abstract String magic(Enemy target);
+    public abstract String skill(Enemy target);
+    
+    // 逃げる判定（spdなどを使って成功率を計算させる）
+    public abstract boolean escape();
+
+    // レベルアップ時の処理
+    public void levelUp() {
+        this.lv++;
+        // ここでステータス上昇値やHP全回復のロジックを生徒が決める
+    }
+}
