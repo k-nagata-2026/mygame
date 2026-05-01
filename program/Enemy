@@ -8,3 +8,39 @@ public abstract class Enemy {
     public abstract String attack(Human target);
     public abstract String skill(Human target);
 }
+
+// スライム
+class Slime extends Enemy {
+    public Slime() {
+        this.name = "スライム";
+        /* hp, atk, def などの値を決める */
+    }
+    @Override
+    public String attack(Human target) { return name + "の体当たり！"; }
+    @Override
+    public String skill(Human target) { return name + "が分裂した！（が、何も起きなかった）"; }
+}
+
+// ドラゴン
+class Dragon extends Enemy {
+    public Dragon() {
+        this.name = "ドラゴン";
+        /* 値を決める */
+    }
+    @Override
+    public String attack(Human target) { return name + "の噛みつき！"; }
+    @Override
+    public String skill(Human target) { return name + "のドラゴンブレス！"; }
+}
+
+// 魔王
+class Demon extends Enemy {
+    public Demon() {
+        this.name = "魔王";
+        /* 値を決める */
+    }
+    @Override
+    public String attack(Human target) { return name + "の邪悪な剣！"; }
+    @Override
+    public String skill(Human target) { return name + "のジ・エンド！"; }
+}
